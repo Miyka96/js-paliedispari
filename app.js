@@ -5,9 +5,22 @@
 const parolaUtente = prompt('dimmi una parola');
 console.log(parolaUtente)
 
-function verificaPalindromo(parolaRicevuta){
+function confrontoPalindromo(parolaRicevuta){
     let arrayParola = parolaRicevuta.split("");
-    console.log(arrayParola);
+    let copia = arrayParola.slice();
+    let arrayReverse = copia.reverse();
+    let originalWord = arrayParola.toString();
+    let wordReverse= arrayReverse.toString();
+    console.log(originalWord)
+    console.log(wordReverse);
+
+    if (originalWord == wordReverse){
+        alert(`La parola ${parolaRicevuta} è palindroma`);
+    }
+    else{
+        alert(`La parola ${parolaRicevuta} non è palindroma`);
+    }
+
 }
 
-verificaPalindromo (parolaUtente);
+confrontoPalindromo (parolaUtente);
